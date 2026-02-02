@@ -1,0 +1,328 @@
+/* 
+
+Foco & Produtividade
+Dependência de tarefas (uma só libera depois da outra)
+Modo foco (esconde tudo menos a tarefa atual)
+Meta diária de tarefas concluídas
+
+
+Métricas & Feedback
+Gráfico de produtividade diária/semanal
+Histórico de tarefas concluídas(MELHORAR O QUE JA TEM)
+Dias consecutivos produtivos (streak)(TALVEZ MELHORAR)
+Comparativo: planejado x realizado
+
+Lembretes & Automação
+
+Alertas antes do prazo(COMO PEDIDO)
+Notificações inteligentes
+Auto-arquivamento de tarefas antigas
+
+Conteúdo & Contexto
+Notas dentro da tarefa
+Anexos (imagens)
+
+Visual & UX
+Temas (dark, glass, minimal)
+Animações sutis de progresso
+
+
+Funcionalidades avançadas
+Sincronização em nuvem */
+
+
+
+:root {
+    /* Cores Principais */
+    --primary: #8257e5;
+    --primary-light: #996dff;
+    --bg-dark: #09090a;
+    --card-bg: rgba(24, 24, 27, 0.7);
+    --text-main: #ffffff;
+    --text-dim: #a1a1aa;
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --accent-blue: #00a3ff;
+    --success: #4ade80;
+    
+    /* Cores Adicionadas (Refatoração) */
+    --bg-gradient-1: #2b1d4e;
+    --bg-gradient-2: #1a1a2e;
+    --input-bg: rgba(0, 0, 0, 0.4);
+    --inner-circle-bg: #121214;
+    --column-header-bg: #16161a;
+    --todo-item-bg: rgba(255, 255, 255, 0.04);
+    --todo-item-expanded: rgba(255, 255, 255, 0.08);
+    --subtask-bg: rgba(0, 0, 0, 0.2);
+    --subtask-hover: rgba(255, 255, 255, 0.05);
+    --danger: #f87171;
+    --danger-soft: rgba(248, 113, 113, 0.1);
+    --danger-shadow: rgba(248, 113, 113, 0.4);
+    --modal-overlay: rgba(0, 0, 0, 0.8);
+    --shadow-dark: rgba(0, 0, 0, 0.3);
+}
+
+:terracota {
+    /* Cores Principais - Paleta Terracota & Bege */
+    --primary: #d46a4c;           /* Terracota vibrante */
+    --primary-light: #e68d71;     /* Terracota suave */
+    --bg-dark: #1b1816;           /* Marrom café profundo (quase preto, mas quente) */
+    --card-bg: rgba(44, 39, 36, 0.7); /* Vidro fumê quente */
+    --text-main: #f7f3f0;         /* Off-white / Creme */
+    --text-dim: #b5a499;          /* Bege acinzentado */
+    --glass-border: rgba(212, 106, 76, 0.2); /* Borda com leve toque terracota */
+    --accent-blue: #8da49c;       /* Verde sálvia (combina melhor com terracota que o azul) */
+    --success: #a3b18a;           /* Verde oliva suave */
+    
+    /* Cores Adicionadas (Refatoração para tons terrosos) */
+    --bg-gradient-1: #3d2b24;     /* Siena queimado escuro */
+    --bg-gradient-2: #261f1c;     /* Argila escura */
+    --input-bg: rgba(20, 15, 12, 0.5);
+    --inner-circle-bg: #1b1816;
+    --column-header-bg: #211d1b;
+    --todo-item-bg: rgba(212, 106, 76, 0.08); /* Fundo com brilho terracota */
+    --todo-item-expanded: rgba(212, 106, 76, 0.15);
+    --subtask-bg: rgba(0, 0, 0, 0.2);
+    --subtask-hover: rgba(212, 106, 76, 0.1);
+    --danger: #bc4749;            /* Vermelho terra */
+    --danger-soft: rgba(188, 71, 73, 0.15);
+    --danger-shadow: rgba(188, 71, 73, 0.3);
+    --modal-overlay: rgba(27, 24, 22, 0.85);
+    --shadow-dark: rgba(0, 0, 0, 0.4);
+} */
+
+
+
+:root {
+    /* Cores Principais - Estética Industrial de Luxo */
+    --primary: #f2f2f2;           /* Prata Nobre */
+    --primary-light: #ffffff;     /* Brilho Máximo (Specular Highlight) */
+    --bg-dark: #020202;           /* Preto Absoluto para contraste infinito */
+    --card-bg: rgba(255, 255, 255, 0.015); /* Vidro ultra-translúcido */
+    --text-main: #f5f5f7;         /* Branco Apple (suave) */
+    --text-dim: #6e6e73;          /* Cinza Espacial fosco */
+    
+    /* Bordas e Divisores - O segredo do efeito espelhado */
+    --glass-border: rgba(255, 255, 255, 0.18);
+    --mirror-edge: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.1) 100%);
+
+    /* Acentos e Status */
+    --accent-blue: #0071e3;       /* Royal Blue (estilo interface de precisão) */
+    --success: #64ffda;           /* Turquesa Metálico */
+    --danger: #ff2d55;            /* Crimson Red */
+    
+    /* Refatoração de profundidade */
+    --bg-gradient-1: #1a1a1a;     /* Cinza Carbono */
+    --bg-gradient-2: #000000;
+    --input-bg: rgba(255, 255, 255, 0.03);
+    --inner-circle-bg: #000000;
+    --column-header-bg: rgba(10, 10, 10, 0.8);
+    --todo-item-bg: rgba(255, 255, 255, 0.03);
+    --todo-item-expanded: rgba(255, 255, 255, 0.07);
+    --subtask-bg: rgba(255, 255, 255, 0.02);
+    --subtask-hover: rgba(255, 255, 255, 0.08);
+    
+    /* Efeitos de Sombra de Alta Definição */
+    --shadow-mirror: 0 8px 32px 0 rgba(0, 0, 0, 0.8), 
+                     inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+:root {
+    /* Cores Principais - Estética Midnight Emerald */
+    --primary: #00ff85;           /* Verde Neon (Acento principal) */
+    --primary-light: #ffffff;     /* Branco para brilhos extremos */
+    --bg-dark: #050505;           /* Preto profundo (Fundo neutro) */
+    --card-bg: rgba(18, 18, 18, 0.75); /* Vidro fumê quase preto */
+    --text-main: #f0fdf4;         /* Off-white com um toque gélido */
+    --text-dim: #52525b;          /* Cinza neutro para não poluir */
+    
+    /* Bordas e Detalhes - Onde o verde brilha */
+    --glass-border: rgba(255, 255, 255, 0.08); /* Borda neutra */
+    --accent-green-glow: rgba(0, 255, 133, 0.15); /* Apenas um halo sutil */
+
+    /* Acentos e Status */
+    --accent-blue: #0ea5e9;       
+    --success: #00ff85;           
+    --danger: #ef4444;            
+    
+    /* Refatoração de Backgrounds (Neutralizados) */
+    --bg-gradient-1: #0c0c0c;     /* Cinza asfalto muito escuro */
+    --bg-gradient-2: #050505;     /* Preto absoluto */
+    --input-bg: rgba(255, 255, 255, 0.03); /* Input neutro */
+    --inner-circle-bg: #0a0a0a;
+    --column-header-bg: rgba(5, 5, 5, 0.95); /* Header quase opaco */
+    
+    /* Itens da Lista (Visual Minimalista) */
+    --todo-item-bg: rgba(255, 255, 255, 0.02); /* Quase invisível */
+    --todo-item-expanded: rgba(255, 255, 255, 0.05);
+    --subtask-bg: rgba(0, 0, 0, 0.4);
+    --subtask-hover: rgba(0, 255, 133, 0.08); /* Verde aparece apenas no hover */
+    
+    --shadow-dark: rgba(0, 0, 0, 0.9);
+}
+
+modo claro
+:root {
+    /* Paleta Principal - Estilo Futurista Industrial */
+    --primary: #8257e5;
+    --primary-light: #996dff;
+    --accent-blue: #00a3ff;
+    --success: #4ade80;
+    --danger: #f87171;
+    
+    /* Superfícies e Profundidade */
+    --bg-dark: #09090a;
+    --bg-gradient: linear-gradient(135deg, #1a1a2e 0%, #09090a 100%);
+    --card-bg: rgba(24, 24, 27, 0.8);
+    --todo-item-bg: rgba(255, 255, 255, 0.03);
+    --todo-item-hover: rgba(130, 87, 229, 0.1);
+    
+    /* Tipografia e Bordas */
+    --text-main: #ffffff;
+    --text-dim: #a1a1aa;
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-border-bright: rgba(130, 87, 229, 0.3);
+}
+
+:root {
+    /* ===============================
+       PALETA DA IMAGEM (TEMA ESCURO)
+       =============================== */
+
+    /* Cores Principais (Baseadas na Imagem) */
+    --primary: #689689;             /* Cambridge Blue: Cor de destaque principal */
+    --primary-light: #B2E6D4;       /* Tiffany Blue: Realces mais claros */
+    --accent-aqua: #83E8BA;         /* Aquamarine: Acentos vibrantes */
+    
+    /* Cores de Fundo e Superfície (Baseadas no Taupe) */
+    --bg-dark: #1a1614;             /* Taupe muito escuro para o fundo */
+    --card-bg: rgba(80, 65, 54, 0.6); /* Taupe (#504136) com transparência */
+    
+    /* Cores de Texto (Baseadas no Khaki) */
+    --text-main: #ffffff;           /* Branco para contraste máximo */
+    --text-dim: #A49E8D;            /* Khaki para texto secundário */
+    
+    /* Cores de Borda e Vidro */
+    --glass-border: rgba(164, 158, 141, 0.2); /* Khaki com transparência */
+    
+    /* Cores de Estado (Adicionadas para complementar) */
+    --success: #83E8BA;             /* Aquamarine: Sucesso */
+    --danger: #E68383;              /* Vermelho suave: Erro */
+    --warning: #E6C783;             /* Dourado suave: Aviso */
+
+    /* ===============================
+       CORES REFATORADAS (COM A NOVA PALETA)
+       =============================== */
+
+    /* Gradientes de Fundo */
+    --bg-gradient-1: #2a2624;       /* Taupe escuro */
+    --bg-gradient-2: #1a1614;       /* Fundo principal */
+    
+    /* Elementos de UI */
+    --input-bg: rgba(80, 65, 54, 0.3);
+    --inner-circle-bg: #2a2624;
+    --column-header-bg: rgba(80, 65, 54, 0.4);
+    
+    /* Itens e Listas */
+    --todo-item-bg: rgba(164, 158, 141, 0.05);
+    --todo-item-expanded: rgba(164, 158, 141, 0.1);
+    --subtask-bg: rgba(80, 65, 54, 0.2);
+    --subtask-hover: rgba(104, 150, 137, 0.1); /* Cambridge Blue suave */
+
+    /* Sombras e Overlays */
+    --modal-overlay: rgba(26, 22, 20, 0.8);
+    --shadow-dark: rgba(0, 0, 0, 0.4);
+    --danger-soft: rgba(230, 131, 131, 0.1);
+    --danger-shadow: rgba(230, 131, 131, 0.3);
+}
+
+
+:root {
+    /* ===============================
+       PALETA "FLORESTA MINERAL" (Baseada na Imagem)
+       =============================== */
+
+    /* AS NOVAS PROTAGONISTAS (Verdes e Azuis) */
+    --primary: #689689;             /* Cambridge Blue: O novo foco principal */
+    --primary-light: #B2E6D4;       /* Tiffany Blue: Luz e interações */
+    --accent-vibrant: #83E8BA;      /* Aquamarine: Destaques e Sucesso */
+
+    /* AS CORES DE BASE (Marrom e Khaki rebaixados) */
+    /* Misturamos o Taupe com preto para um fundo profundo, menos "marrom" */
+    --bg-dark: #1e1b19;
+    /* O Khaki é usado para suavizar o branco puro */
+    --text-off-white: #f0f2ee;
+    --text-dim: #A49E8D;            /* Khaki original para texto de apoio */
+
+    /* ===============================
+       SUPERFÍCIES E LUZ (Foco no Vidro Esverdeado)
+       =============================== */
+
+    /* Gradiente sutil que vai do Taupe profundo para um tom mais frio */
+    --bg-gradient: linear-gradient(135deg, #241d1a 0%, #1a2422 100%);
+
+    /* Cards agora são mais neutros, deixando a cor para o conteúdo */
+    --card-bg: rgba(35, 30, 28, 0.8);
+    
+    /* Bordas usam o Tiffany Blue para dar um aspecto de "vidro mineral" */
+    --glass-border: rgba(178, 230, 212, 0.15);
+    --glass-border-bright: rgba(178, 230, 212, 0.4);
+
+    /* ===============================
+       ESTADOS E INTERAÇÕES
+       =============================== */
+    
+    --success: #83E8BA;             /* Aquamarine */
+    /* Uma cor de erro nova que complementa a paleta fria (um coral suave) */
+    --danger: #E68383;
+
+    /* Itens de lista agora têm um tom esverdeado sutil */
+    --todo-item-bg: rgba(104, 150, 137, 0.08); /* Tintura de Cambridge Blue */
+    --todo-item-hover: rgba(178, 230, 212, 0.12); /* Tintura de Tiffany Blue */
+
+    /* Inputs e modais */
+    --input-bg: rgba(0, 0, 0, 0.3);
+    --modal-overlay: rgba(20, 26, 24, 0.85); /* Overlay com tom frio */
+}
+
+:root {
+    /* ===============================
+       PALETA "SOLAR INDUSTRIAL" (Protagonismo Amarelo/Laranja)
+       =============================== */
+
+    /* AS PROTAGONISTAS (Cores Quentes) */
+    --primary: #FFAE42;             /* Yellow Orange: A cor principal de ação */
+    --primary-dark: #C36721;        /* Ruddy Brown: Para textos em destaque e bordas fortes */
+    --accent-sun: #F3D643;          /* Sandstorm: A cor de preenchimento dos itens */
+    --highlight-glow: #FFCC33;      /* Sunglow: Para detalhes que precisam brilhar */
+
+    /* O SUPORTE DE CONTRASTE (Azuis rebaixados para detalhes) */
+    --accent-blue: #073376;         /* Catalina Blue: Usado apenas para o texto (máxima leitura) */
+    --accent-teal: #29B2A0;         /* Light Sea Green: Apenas para "Sucesso/Check" */
+
+    /* SUPERFÍCIES QUENTES */
+    /* Fundo agora é um "Papel Amarelado" técnico */
+    --bg-main: #FFFDF0;             
+    --bg-gradient: linear-gradient(
+        135deg, 
+        #FFFDF0 0%, 
+        #FDF5D7 100%
+    );
+
+    /* CARDS: Agora eles têm cor de verdade */
+    --card-bg: #FFFFFF;             /* Branco puro para destacar do fundo creme */
+    --todo-item-bg: #FDF5D7;        /* Fundo Sandstorm suave para as tarefas */
+    --todo-item-hover: #F3D643;     /* Amarelo mais intenso no hover */
+
+    /* TEXTO TÉCNICO */
+    --text-main: #073376;           /* Catalina Blue para o texto (contrasta lindamente com amarelo) */
+    --text-muted: #8E7B3E;          /* Um tom de ocre para textos secundários */
+
+    /* BORDAS E ESTRUTURA RÍGIDA */
+    --glass-border: #FFCC33;        /* Borda Sunglow (Amarela) */
+    --glass-border-bright: #C36721; /* Borda Laranja para foco */
+
+    /* FEEDBACK */
+    --success: #29B2A0;
+    --danger: #C36721;
+    --danger-soft: rgba(195, 103, 33, 0.1);
+}
