@@ -2,6 +2,10 @@
 
 Um gerenciador de tarefas web inovador com interface baseada em linha do tempo horizontal (carrossel), suporte a tarefas recorrentes, subtarefas e múltiplos temas visuais. Desenvolvido com foco em UX moderno utilizando Glassmorphism.
 
+
+https://vbrfernandes.github.io/timeline-todo--js-localstorage/
+
+
 ## 📁 Documentação do Projeto
 
 1. [Documentação de Contexto](documentação/01-Documentação%20de%20Contexto.md)
